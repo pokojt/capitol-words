@@ -1,0 +1,17 @@
+
+
+
+<form>
+  <div class="form-group">
+    <label for="phrase">Enter a word or Phrase:</label>
+    {{input value=phrase id="phrase"}}
+  </div>
+  <div class="form-group">
+    <select onchange={{action "selectParty" value="target.value"}}>
+    {{#each parties as |partyChoice|}}
+      <option value={{partyChoice}} selected={{eq party partyChoice}}>{{partyChoice}}</option>
+    {{/each}}
+    </select>
+  </div>
+  <button class="btn btn-primary" {{action 'wordLookup'}}>Submit</button>
+</form>
